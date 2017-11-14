@@ -2,24 +2,29 @@
 #
 # Uses GraphicsMagick to add text to an image.
 
-DENSITY="${DENSITY:-288}"
 FONT="${FONT:-Courier-Bold}"
-ROTATE="${ROTATE:--90}"
+FONT_SIZE="${FONT_SIZE:-20}"
+DENSITY="${DENSITY:-288}"
+ROTATE="${ROTATE:--0}"
 TEMPLATE="${TEMPLATE:-business-card.png}"
-TEXT_POSITION="${TEXT_POSITION:--305,90}"
+TEXT_POSITION="${TEXT_POSITION:-125,575}"
+TEXT_POSITION2="${TEXT_POSITION2:-40,500}"
 
 ## Main program
 
 [ -n "$DEBUG" ] && set -x
 
 let i=1
-read CODE
-while [ -n "$CODE" ]; do
+read LINE
+while [ -n "$LINE" ]; do
+    CODE=$(echo $LINE | awk '{print $1}')
+    DISCOUNT=$(echo $LINE | awk '{print $2}')
     OUTPUT="card-$(printf '%03d' $i).png"
     echo "Creating $OUTPUT with code $CODE"
-    gm convert -density $DENSITY -font "$FONT" \
+    gm convert -density $DENSITY -font "$FONT" -pointsize "$FONT_SIZE" \
         -draw "rotate $ROTATE text $TEXT_POSITION '$CODE'" \
+        -draw "rotate $ROTATE text $TEXT_POSITION2 '$DISCOUNT Off on Amazon.com'" \
         "$TEMPLATE" $OUTPUT
     let i=i+1
-    read CODE
+    read LINE
 done
