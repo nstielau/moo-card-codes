@@ -13,3 +13,13 @@ That's what this script is for. It uses GraphicsMagick.
 For instructions (and an example) see this blog post:
 
 <https://www.agileplannerapp.com/blog/building-agile-planner/moo-card-codes>
+
+## Updates
+
+Updated this repo with the Feckless Logo to make the moo cards I wanted.
+
+Moo only allows 50 custom backs at a time, so you might have to make two orders.
+
+Example card
+
+[!Card](./example_card.png)
