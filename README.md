@@ -22,4 +22,4 @@ Moo only allows 50 custom backs at a time, so you might have to make two orders.
 
 Example card
 
-[!Card](https://raw.githubusercontent.com/nstielau/moo-card-codes/master/example_card.png)
+![Card](https://raw.githubusercontent.com/nstielau/moo-card-codes/master/example_card.png)
