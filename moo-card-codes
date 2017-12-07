@@ -2,13 +2,16 @@
 #
 # Uses GraphicsMagick to add text to an image.
 
+set -x
+set -e
+
 FONT="${FONT:-Courier-Bold}"
-FONT_SIZE="${FONT_SIZE:-20}"
+FONT_SIZE="${FONT_SIZE:-18}"
 DENSITY="${DENSITY:-288}"
 ROTATE="${ROTATE:--0}"
 TEMPLATE="${TEMPLATE:-business-card.png}"
-TEXT_POSITION="${TEXT_POSITION:-125,575}"
-TEXT_POSITION2="${TEXT_POSITION2:-40,500}"
+TEXT_POSITION="${TEXT_POSITION:-160,575}"
+TEXT_POSITION2="${TEXT_POSITION2:-75,500}"
 
 ## Main program
 
